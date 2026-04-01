@@ -1,0 +1,479 @@
+@charset "UTF-8";
+
+/* 共通部分
+------------------------------- */
+html {
+  font-size: 100%;
+}
+body {
+  font-family: "Philosopher", sans-serif;
+  line-height: 1.7;
+  color: #432;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+/* レイアウト */
+/* ↓p212 wrapperクラス追加 */
+.wrapper {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+.align-center {
+  text-align: center;
+}
+
+/* 見出し */
+.font-english {
+  font-family: "Philosopher", sans-serif;
+  font-weight: normal;
+}
+/* ↓キャッチコピーとaboutの装飾を共通コードをまとめたもの p194*/
+/* ↓別々に書いてもいいけど書き方の練習*/
+
+.page-title,/* ←キャッチコピー＋見出しということ*/
+.heading-large,/*←p238見出しの装飾 大きさと位置*/
+.heading-medium {
+  font-size: 3rem; /* ←共通の要素を書く*/
+  text-align: center;
+}
+.page-title {
+  /* ←キャッチコピーだけの要素を書く*/
+  margin-top: 2rem;
+  line-height: 1.4;
+}
+.heading-large {
+  /* ←見出しだけの要素を書く*/
+  margin-bottom: 1rem;
+}
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: #0bd;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: 0.5s; /* ←背景色が0.5秒かけて変化する。これがなければ即変化*/
+}
+.btn:hover {
+  background-color: #0090aa;
+  scale: 1.2 1.5; /* ←p218 ボタンの大きさの変化を指示*/
+  /* ↓その他の指示プロパティ例*/
+  /* rotate: -5deg; ←p219 ボタンの回転を指示*/
+  /*translate: 10px -20px; ←p220 ボタンの移動を指示*/
+}
+/* iframe */
+/* ↓p281 地図の幅を変更する：親サイズからはみ出ないでねの指示 */
+
+iframe {
+  width: 100%;
+}
+/* ↓exa-so.co.jpからボタンのコピペをしてみた　コピペするだけで好きなボタンにできる*/
+.btn-gradient-three {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ffd876 100%);
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+}
+
+.btn-gradient-three:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+}
+
+.btn-gradient-three:active {
+  transform: scale(1.02);
+}
+
+/* ヘッダー
+------------------------------- */
+.page-header {
+  padding-top: 0.5rem;
+}
+.logo {
+  width: 210px;
+}
+
+/* ナビゲーションメニュー
+------------------------------- */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  font-size: 1.5rem;
+  list-style: none;
+}
+.main-nav a {
+  color: #432;
+}
+.main-nav a:hover {
+  color: #0bd;
+}
+
+/* ヘッダーカバー画像
+------------------------------- */
+.cover {
+  background-size: cover;
+  background-position: center bottom;
+  height: 800px;
+}
+/* ↓Newsなどサブページの余白などの指定 */
+.sub-cover {
+  background-size: cover;
+  background-position: center bottom;
+  height: 528px;
+  margin-bottom: 4rem;
+}
+
+/* HOME
+------------------------------- */
+.cover-home {
+  background-image: url(../images/cover-home-s.webp);
+}
+/* 見出しと文章のクラスの、幅の最大値や余白の指定 */
+.about {
+  max-width: 736px;
+  padding: 0 1.5rem;
+  margin: 3rem auto 0;
+}
+.about p {
+  margin-bottom: 3rem;
+}
+
+/* ↓NEWSページの背景画像 */
+.cover-news {
+  background-image: url(../images/cover-news-s.webp);
+}
+
+/* ↓NEWSページの記事部分 タイトルと日付の装飾p232*/
+.post {
+  margin-bottom: 3rem;
+}
+.post-title {
+  font-weight: normal;
+  margin-bottom: 1.25rem;
+}
+
+/* ↓カテゴリと日付を横並びにするp233 */
+.post-info {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+/* ↓カテゴリと日付の装飾p233 */
+.post-cat {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+.post-cat a {
+  color: #432;
+  background-color: #faf7f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+.post-cat a:hover {
+  background-color: #c9c2bc;
+}
+.post-date {
+  font-size: 0.875rem;
+}
+/* ↓News記事の装飾 */
+.post-thumbnail {
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+.post p {
+  margin-bottom: 1.5rem;
+  line-height: 2;
+}
+
+/* サイドバー */
+/* ↓p239リストの装飾 */
+
+.side-menu {
+  list-style: none; /* ←リストの丸マークを非表示 */
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.side-menu li {
+  border-bottom: 1px solid #c9c2bc;
+}
+.side-menu a {
+  color: #432;
+  display: block; /* ←テキストのみでなくブロック単位でクリック範囲を広げられる */
+  padding: 1rem;
+}
+.side-menu a:hover {
+  color: #0bd;
+}
+
+/* MENU
+------------------------------- */
+.cover-menu {
+  background-image: url(../images/cover-menu-s.webp);
+}
+/* ↓p259グリッド（タイル型）の指定 */
+.grid {
+  display: grid; /* ←タイル型に並べる指定 */
+  gap: 2rem 1.5rem; /* ←縦方向の余白と横方向の余白 */
+  grid-template-columns: repeat(2, 1fr); /* 1frのボックスが一列に二つ並ぶ指定 */
+  text-align: center;
+}
+.item img {
+  aspect-ratio: 1/1; /* ←画像の比率 */
+  object-fit: cover; /* ←はみ出した部分をトリミングする指定 */
+  border-radius: 16px;
+}
+.item p {
+  font-size: 0.875rem;
+}
+/* CONTACT
+------------------------------- */
+/* ↓p277 背景画像の指定 */
+.cover-contact {
+  background-image: url(../images/cover-contact-s.webp);
+}
+
+/* 店舗情報 */
+/* ↓p279 余白の調整 */
+.location {
+  margin-bottom: 3.5rem;
+}
+.location-info {
+  margin-bottom: 2rem;
+}
+.location-info .info {
+  padding: 0;
+}
+
+/* お問い合わせ */
+.email {
+  max-width: 916px; /* ←p283 画面の最大値を指定 */
+  background-color: #faf7f0; /* ←背景色の指定 */
+  border-radius: 48px; /* ←角丸の指定 */
+  padding: 1.5rem 2.5rem 2.5rem; /* ←余白の指定 */
+  margin: 0 auto 2rem; /* ←余白の指定 */
+}
+.email p {
+  margin: 1rem 0 2rem; /* ←文章の行間の指定 */
+}
+
+/* SNS */
+/* ↓p287 余白の調整 */
+.sns-item {
+  margin-bottom: 2rem;
+}
+.sns-item .heading-medium {
+  margin-bottom: 0.5rem;
+}
+/* ↓p294 youtube表示比率の調整 16:9にする指示 */
+.sns-youtube {
+  aspect-ratio: 16/9;
+}
+.sns-youtube iframe {
+  height: 100%;
+}
+
+/* フッター
+------------------------------- */
+
+/* ↓フッター背景画像 */
+.page-footer {
+  background-image: url(../images/footer-s.webp);
+  background-size: cover;
+  background-position: center;
+  padding-top: 12rem;
+}
+
+.info {
+  width: 100%;
+  max-width: 544px;
+  margin: auto;
+  padding: 0 1.5rem;
+  border-spacing: 0;
+}
+.info th,
+.info td {
+  border-bottom: 1px solid #c9c2bc;
+}
+.info th {
+  text-align: left;
+  font-weight: normal;
+  padding: 1rem;
+}
+.info td {
+  padding: 1rem 0;
+}
+/* ↓コピーライトの背景装飾 */
+.copyright {
+  background-color: #432;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 6rem;
+  color: #fff;
+}
+/* ↓モバイル版でのみバナーを表示しないという指示 */
+/* ※かつデスクトップ版でのみバナーを表示するために、@media内ではdisplay: block; を追加している*/
+.ad {
+  display: none;
+}
+/* p209↓メディアクエリー：デスクトップ版 */
+/* !!!!!デスクトップ版への指示はすべて@media{}の中に入れる!!!! */
+/* ↓800pxまで画面サイズが広がったら文字の大きさが変わる、と指示している */
+@media (min-width: 800px) {
+  /* ↓800pxまで画面サイズが広がったらh2の文字が赤くなる、という指示 */
+  /*h2 {
+    color: red;
+  } */
+  /* 見出し */
+  .page-title {
+    font-size: 5rem;
+  }
+  .heading-large {
+    font-size: 4rem;
+  }
+  /* p240↓デスクトップ版で、Menu記事タイトルを大きくする指定 */
+  .post-title {
+    font-size: 2rem;
+  }
+  /* p210↓ロゴとメニューを両端に配置する */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+  }
+
+  /* ヘッダー */
+  .main-nav {
+    font-size: 2rem;
+  }
+
+  /* ヘッダーカバー画像 */
+  /* p241↓デスクトップ版で、上部カバー画像を短く表示する指示*/
+  .sub-cover {
+    height: 400px;
+    margin-bottom: 6rem;
+  }
+
+  /* p213↓モバイルサイズとデスクトップサイズで画像を変更する */
+  /* HOME　ページ上部の画像 */
+  .cover-home {
+    background-image: url(../images/cover-home-l.webp);
+  }
+  .about {
+    margin: 4rem auto 0;
+  }
+  /* p242↓デスクトップ版で、背景画像を別に設定する*/
+  /* NEWS */
+  .cover-news {
+    background-image: url(../images/cover-news-l.webp);
+  }
+  /* p243-244↓デスクトップ版で、コンテンツを横並びにする（2カラム）*/
+  .news-contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .post {
+    /*width: 70%;*/
+    width: 60%; /* ← p246 60%に変更して3カラムに余白をつける  */
+    order: 2; /* ← p247 番号順に左から表示される  */
+  }
+  .sidebar {
+    width: 22%;
+    order: 3; /* ← p247 番号順に左から表示される  */
+  }
+  .ad {
+    order: 1; /* ← p247 ad{}追加・番号順に左から表示される  */
+    display: block; /* ← デスクトップ版でのみバナーを表示する指示  */
+  }
+
+  .sidebar .heading-medium {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  /* MENU */
+  /* p260 デスクトップ版画像の指定 */
+  .cover-menu {
+    background-image: url(../images/cover-menu-l.webp);
+  }
+  /* ↓p261 デスクトップ版でのみ画像を3つずつ並べる指定 */
+  .grid {
+    gap: 3rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    /* ← デスクトップ版でのみ1frの画像を3つリピートするという指定  */
+  }
+  /* ↓ デスクトップ版でのみ余白と文字を大きくする指定 */
+  .item img {
+    margin-bottom: 0.5rem;
+  }
+  .item p {
+    font-size: 1rem;
+  }
+  /* ↓ p265 一部の画像を大きくグリッドする指定 */
+  .item-big {
+    grid-column: 1/3; /* ← 横のグリッドライン1-3番目の指定  */
+    grid-row: 1/3; /* ← 縦のグリッドライン1-3番目の指定  */
+  }
+  /* ↓ p267 画像の高さを揃えるために指定（見ながら微調整） */
+  .item-big img {
+    height: 94.5%;
+    width: 100%;
+  }
+
+  /* CONTACT */
+  /* ↓p295 デスクトップ版画像の指定 */
+  .cover-contact {
+    background-image: url(../images/cover-contact-l.webp);
+  }
+  /* ↓p296 flexでお店の情報と地図を横並びにする */
+  .location {
+    display: flex;
+    gap: 2rem;
+  }
+  .location-info {
+    width: 32%;
+  }
+  .location-info .info th {
+    padding-left: 2rem;
+  }
+  .location-map {
+    width: 64%;
+  }
+  /* ↓p297 flexで各SNSを横並びにする */
+  .email {
+    margin-bottom: 4rem;
+  }
+  .sns {
+    display: flex;
+    align-items: flex-start; /* ←p297 上揃えにする指定 */
+    gap: 2rem;
+    margin-bottom: 0;
+  }
+  .sns-item {
+    flex: 1;
+  }
+
+  /* フッター ページ下部の画像*/
+  .page-footer {
+    background-image: url(../images/footer-l.webp);
+    padding-top: 12rem;
+  }
+  .info th {
+    padding-left: 2.5rem;
+  }
+}
